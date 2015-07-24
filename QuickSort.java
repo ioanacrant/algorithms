@@ -1,5 +1,6 @@
 import java.util.Arrays;
 import java.util.Random;
+import java.lang.Math;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -7,7 +8,20 @@ public class QuickSort{
     static int count;
     public static void partition(int[] array, int start, int end){
         if(end-start>=2){
-            int pivotIndex = end-1;
+            int a = array[start];
+            int b = array[(end-start)/2];
+            int c = array[end-1];
+            int median = Math.max(Math.min(a,b), Math.min(Math.max(a,b),c));
+            int pivotIndex;
+            if (median == array[start]){
+                pivotIndex = start;
+            }
+            else if (median == array[(end-start)/2]){
+                pivotIndex = (end-start)/2;
+            }
+            else{
+                pivotIndex = end-1;
+            }
             swap(array, start, pivotIndex);
             int pivot = array[start];
             int i=start+1;
