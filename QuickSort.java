@@ -8,20 +8,7 @@ public class QuickSort{
     static int count;
     public static void partition(int[] array, int start, int end){
         if(end-start>=2){
-            int a = array[start];
-            int b = array[(end-start)/2];
-            int c = array[end-1];
-            int median = Math.max(Math.min(a,b), Math.min(Math.max(a,b),c));
-            int pivotIndex;
-            if (median == array[start]){
-                pivotIndex = start;
-            }
-            else if (median == array[(end-start)/2]){
-                pivotIndex = (end-start)/2;
-            }
-            else{
-                pivotIndex = end-1;
-            }
+            int pivotIndex = start;
             swap(array, start, pivotIndex);
             int pivot = array[start];
             int i=start+1;
@@ -34,6 +21,7 @@ public class QuickSort{
             swap(array,start,i-1);
             count+=i-1-start;
             count+=end-i;
+            //System.out.println(count);
             partition(array,start,i-1);
 
             partition(array,i,end);
@@ -48,10 +36,7 @@ public class QuickSort{
         return array;
     }
     public static void main(String[] args){
-        int[]a1 = {6,2,3,1};
-        partition(a1,0,a1.length);
-        System.out.println(Arrays.toString(a1));
-        System.out.println(count);
+
 
         BufferedReader br=null;
         try{
