@@ -9,17 +9,32 @@ public class QuickSort{
     public static void partition(int[] array, int start, int end){
         if(end-start>=2){
             int a = array[start];
-            int b = array[(end-start)/2];
+            int b;
+            if ((end-start)%2==0 ){
+                b = array[((end-start)/2)-1+start];
+            }else{
+                b = array[((end-start)/2)+start];
+            }
+
             int c = array[end-1];
-            int median = Math.max(Math.min(a,b), Math.min(Math.max(a,b),c));
+
+            int median = median(a,b,c);
+
             int pivotIndex;
             if (median == array[start]){
                 pivotIndex = start;
             }
-            else if (median == array[(end-start)/2]){
-                pivotIndex = (end-start)/2;
+            else if ((end-start)%2==0 && median == array[(end-start)/2-1+start]){
+                pivotIndex = (end-start)/2-1+start;
+            }
+            else if ((end-start)%2==1 && median == array[(end-start)/2+start]){
+                pivotIndex = (end-start)/2+start;
+            }
+            else if (median == array[end-1]){
+                pivotIndex = end-1;
             }
             else{
+                System.out.println("no");
                 pivotIndex = end-1;
             }
             swap(array, start, pivotIndex);
@@ -32,8 +47,7 @@ public class QuickSort{
                 }
             }
             swap(array,start,i-1);
-            count+=i-1-start;
-            count+=end-i;
+            count+=end-start-1;
             partition(array,start,i-1);
 
             partition(array,i,end);
@@ -47,12 +61,22 @@ public class QuickSort{
         array[index1]=b;
         return array;
     }
+    public static int median(int a,int b,int c){
+        if (a < b){
+            if( b < c){
+                return b;
+            }if (a < c){
+                return c;
+            }return a;
+        }else{
+            if (a < c){
+                return a;
+            }if (b < c){
+                return c;
+            }return b;
+        }
+    }
     public static void main(String[] args){
-        int[]a1 = {6,2,3,1};
-        partition(a1,0,a1.length);
-        System.out.println(Arrays.toString(a1));
-        System.out.println(count);
-
         BufferedReader br=null;
         try{
           br = new BufferedReader(new FileReader("QuickSort.txt"));
