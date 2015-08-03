@@ -8,7 +8,9 @@ public class QuickSort{
     static int count;
     public static void partition(int[] array, int start, int end){
         if(end-start>=2){
+
             int pivotIndex = start;
+
             swap(array, start, pivotIndex);
             int pivot = array[start];
             int i=start+1;
@@ -19,9 +21,9 @@ public class QuickSort{
                 }
             }
             swap(array,start,i-1);
-            count+=i-1-start;
-            count+=end-i;
-            //System.out.println(count);
+
+            count+=end-start-1;
+
             partition(array,start,i-1);
 
             partition(array,i,end);
@@ -35,8 +37,22 @@ public class QuickSort{
         array[index1]=b;
         return array;
     }
+    public static int median(int a,int b,int c){
+        if (a < b){
+            if( b < c){
+                return b;
+            }if (a < c){
+                return c;
+            }return a;
+        }else{
+            if (a < c){
+                return a;
+            }if (b < c){
+                return c;
+            }return b;
+        }
+    }
     public static void main(String[] args){
-
 
         BufferedReader br=null;
         try{
