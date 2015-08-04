@@ -36,9 +36,6 @@ public class Mergesort{
   }
   public static void main(String[] args){
     int[] orig= {2,5,3,3,8,1,7,4,9,6};
-    int[] a= {1,3};
-    int[] b= {2,4};
-    int[] x=merge(a,b);
     System.out.println(Arrays.toString(split(orig)));
 
   }

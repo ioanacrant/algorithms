@@ -37,11 +37,11 @@ public class RandomMinCut{
 
     }
     public static void main(String[] args) throws IOException{
-        Scanner br = new Scanner(new BufferedReader(new FileReader("hello.txt")));
+        Scanner br = new Scanner(new BufferedReader(new FileReader("RandomMinCut.txt")));
         ArrayList<ArrayList<Integer>> adjacencyList = new ArrayList<ArrayList<Integer>>();
-        adjacencyList.add(new ArrayList());
+        adjacencyList.add(new ArrayList<Integer>());
         while (br.hasNextLine()){
-            String[] hello = br.nextLine().split("\\t");
+            String[] hello = br.nextLine().split(" ");
             ArrayList<Integer> line = new ArrayList<Integer>();
             for (int j=1;j<hello.length;j++){
                 line.add(Integer.parseInt(hello[j]));

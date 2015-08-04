@@ -51,9 +51,9 @@ public class Countinversions{
   public static void main(String[] args){
     BufferedReader br=null;
     try{
-      br = new BufferedReader(new FileReader("IntegerArray.txt"));
-      long[] orig=new long[100000];
-      for (int i=0;i<100000;i++){
+      br = new Scanner(new BufferedReader(new FileReader("CountInversions.txt")));
+      long[] orig=new long[10];
+      while (br.hasNextLine()){
         orig[i]=Long.parseLong(br.readLine());
       }
       System.out.println(countInversions(orig));
