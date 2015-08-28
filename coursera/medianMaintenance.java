@@ -1,7 +1,7 @@
 import java.util.*;
 import java.io.*;
 
-public class medianMaintenance{
+public class MedianMaintenance{
     public static int extractMedian(PriorityQueue<Integer> minHeap, PriorityQueue<Integer> maxHeap){
         if (minHeap.size()-maxHeap.size()>=2){
             maxHeap.add(minHeap.poll());

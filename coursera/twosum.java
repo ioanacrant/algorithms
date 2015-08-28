@@ -1,7 +1,7 @@
 import java.util.*;
 import java.io.*;
 
-public class twosum{
+public class Twosum{
     public static boolean[] checkHash(Hashtable<Long,Hashtable<Integer, Long>> bighash, long minLower, long maxLower, boolean[] sumtrues){
         for (long lower = minLower;lower<=maxLower;lower++){
             if (bighash.containsKey(lower)){
