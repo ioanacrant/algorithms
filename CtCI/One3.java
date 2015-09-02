@@ -24,6 +24,6 @@ public class One3{
         return true;
     }
     public static void main(String[] args){
-        System.out.print(isPermutation("aBc","cba"));
+        System.out.print(isPermutation("aabb","ab"));
     }
 }
