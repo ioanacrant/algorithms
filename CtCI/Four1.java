@@ -2,7 +2,8 @@ import java.util.*;
 public class Four1{
     public static void main(String[] args){
         int[] a = {0,1,3,5};
-        printMissing(a);
+        System.out.print(decToHex(35, ""));
+
     }
 
     public int heightcheck(Node head){
@@ -32,6 +33,22 @@ public class Four1{
 				System.out.println(i);
 			}
 		}
+	}
+    public static String decToHex(int dec, String sofar){
+		if (dec==0){
+			return sofar;
+		}
+		char[] hexDigits = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E','F'};
+		int power = 0;
+		while (Math.pow(16,power)<=dec){
+			power++;
+		}
+		int powerTaken = (int) Math.pow(16,power-1);
+
+		int mults = dec/powerTaken;
+		sofar+=hexDigits[mults];
+
+		return decToHex(dec - powerTaken*mults, sofar);
 	}
 
 }
