@@ -1,8 +1,9 @@
 import java.util.*;
 public class SortingImplementation{
     public static void main(String[] args){
-        int[] a = {3,4,2,1};
-        quickSort(a);
+        int[] a = {1, 2, 3, 4, 8};
+        System.out.print(binarySearch(a, 0, a.length, 4));
+        //quickSort(a);
         System.out.print(Arrays.toString(a));
     }
     public static void bubbleSort(int[] array){
