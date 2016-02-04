@@ -11,7 +11,7 @@ class ArrayList{
         if (size==array.length){
             int[] a1 = new int[array.length * 2];
             for (int i=0;i<array.length;i++){
-                a1[i]=array[1];
+                a1[i]=array[i];
             }
             array = a1;
         }

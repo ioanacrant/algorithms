@@ -16,7 +16,7 @@ class Nine6{
         for (String p:before){
             after.add("("+p+")");
             after.add(p+"()");
-            if (isNotAPalindrome(p+"()")){
+            if (isNotAPalindrome(p+"()")){ 
                 after.add("()"+p);
             }
         }
